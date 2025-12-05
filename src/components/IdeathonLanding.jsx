@@ -8,7 +8,7 @@ const fadeInUp = {
   visible: (delay = 0) => ({
     opacity: 1,
     y: 0,
-    transition: { duration: .8, delay, ease: "easeOut" },
+    transition: { duration: 0.8, delay, ease: "easeOut" },
   }),
 };
 
@@ -17,18 +17,22 @@ const staggerChildren = {
   visible: { transition: { staggerChildren: 0.14 } },
 };
 
+const stars = Array.from({ length: 60 }, (_, i) => ({
+  id: i,
+  top: Math.random() * 100,
+  left: Math.random() * 100,
+  size: Math.random() * 3 + 1,
+  duration: Math.random() * 6 + 4,
+}));
+
 const IdeathonLanding = () => {
   return (
     <>
       <ParallaxBackground />
-
       <div className="relative min-h-screen overflow-hidden bg-slate-950 text-slate-50">
-        
         <div className="relative z-10 mx-auto flex min-h-screen max-w-6xl flex-col px-4 pb-10 pt-4 sm:px-6 md:px-8">
-          
           <header className="mb-8 mt-2 rounded-full border border-slate-700/60 bg-slate-950/80 px-4 py-2 shadow-[0_18px_45px_rgba(15,23,42,0.9)] backdrop-blur-xl md:mb-10 md:px-5">
             <div className="flex items-center justify-between gap-4">
-              
               <motion.div
                 className="flex items-center gap-3"
                 initial={{ opacity: 0, x: -20 }}
@@ -48,7 +52,6 @@ const IdeathonLanding = () => {
                 </div>
               </motion.div>
 
-              
               <motion.nav
                 className="hidden items-center gap-1 text-[13px] text-slate-300 md:flex"
                 initial={{ opacity: 0, x: 20 }}
@@ -75,9 +78,7 @@ const IdeathonLanding = () => {
           </header>
 
           <main className="flex-1">
-        
             <section className="mb-14 grid items-center gap-10 md:grid-cols-[1.5fr,1.1fr]">
-        
               <motion.div
                 variants={staggerChildren}
                 initial="hidden"
@@ -184,7 +185,6 @@ const IdeathonLanding = () => {
                 </motion.div>
               </motion.div>
 
-              
               <motion.div
                 initial={{ opacity: 0, scale: 0.95, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -220,13 +220,11 @@ const IdeathonLanding = () => {
                   </div>
                 </motion.div>
 
-                
                 <div className="pointer-events-none absolute -right-2 -top-10 h-32 w-32 rounded-full bg-[radial-gradient(circle_at_30%_20%,_#fb923c,_#7c2d12)] shadow-[0_20px_45px_rgba(248,113,113,0.7)] blur-[0.2px]" />
                 <div className="pointer-events-none absolute -bottom-6 -left-3 h-24 w-24 rounded-full bg-[radial-gradient(circle_at_25%_10%,_#22c55e,_#064e3b)] shadow-[0_18px_40px_rgba(34,197,94,0.7)] blur-[0.2px]" />
               </motion.div>
             </section>
 
-            
             <motion.section
               id="about"
               className="mb-12 space-y-5"
@@ -249,6 +247,27 @@ const IdeathonLanding = () => {
                   product — just a powerful concept, a sharp prototype, and a
                   pitch that inspires.
                 </p>
+              </div>
+
+              <div className="starfield">
+                {stars.map((star) => (
+                  <motion.span
+                    key={star.id}
+                    className="star"
+                    style={{
+                      top: `${star.top}%`,
+                      left: `${star.left}%`,
+                      width: star.size,
+                      height: star.size,
+                    }}
+                    animate={{ opacity: [0.1, 1, 0.1] }}
+                    transition={{
+                      duration: star.duration,
+                      repeat: Infinity,
+                      repeatType: "reverse",
+                    }}
+                  />
+                ))}
               </div>
 
               <div className="grid gap-4 md:grid-cols-3">
@@ -281,7 +300,6 @@ const IdeathonLanding = () => {
               </div>
             </motion.section>
 
-            
             <motion.section
               id="tracks"
               className="mb-12 space-y-5"
@@ -333,7 +351,6 @@ const IdeathonLanding = () => {
               </div>
             </motion.section>
 
-            
             <motion.section
               id="timeline"
               className="mb-12 space-y-5"
@@ -381,7 +398,6 @@ const IdeathonLanding = () => {
               </div>
             </motion.section>
 
-            
             <motion.section
               id="register"
               className="mb-10 space-y-5"

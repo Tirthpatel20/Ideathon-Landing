@@ -1,1 +1,15 @@
 @import "tailwindcss";
+
+.starfield {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  z-index: -3;
+}
+
+.star {
+  position: absolute;
+  border-radius: 50%;
+  background: white;
+  filter: drop-shadow(0 0 6px rgba(255, 255, 255, 0.7));
+}
