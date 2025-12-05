@@ -184,7 +184,7 @@ const IdeathonLanding = () => {
                 </motion.div>
               </motion.div>
 
-              {/* right / info card + planets */}
+              
               <motion.div
                 initial={{ opacity: 0, scale: 0.95, y: 20 }}
                 animate={{ opacity: 1, scale: 1, y: 0 }}
@@ -220,13 +220,13 @@ const IdeathonLanding = () => {
                   </div>
                 </motion.div>
 
-                {/* planet orbs */}
+                
                 <div className="pointer-events-none absolute -right-2 -top-10 h-32 w-32 rounded-full bg-[radial-gradient(circle_at_30%_20%,_#fb923c,_#7c2d12)] shadow-[0_20px_45px_rgba(248,113,113,0.7)] blur-[0.2px]" />
                 <div className="pointer-events-none absolute -bottom-6 -left-3 h-24 w-24 rounded-full bg-[radial-gradient(circle_at_25%_10%,_#22c55e,_#064e3b)] shadow-[0_18px_40px_rgba(34,197,94,0.7)] blur-[0.2px]" />
               </motion.div>
             </section>
 
-            {/* ABOUT */}
+            
             <motion.section
               id="about"
               className="mb-12 space-y-5"
@@ -281,7 +281,7 @@ const IdeathonLanding = () => {
               </div>
             </motion.section>
 
-            {/* TRACKS */}
+            
             <motion.section
               id="tracks"
               className="mb-12 space-y-5"
@@ -333,7 +333,7 @@ const IdeathonLanding = () => {
               </div>
             </motion.section>
 
-            {/* TIMELINE */}
+            
             <motion.section
               id="timeline"
               className="mb-12 space-y-5"
@@ -381,7 +381,7 @@ const IdeathonLanding = () => {
               </div>
             </motion.section>
 
-            {/* REGISTER / FAQ (light) */}
+            
             <motion.section
               id="register"
               className="mb-10 space-y-5"
